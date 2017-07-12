@@ -5,7 +5,7 @@ by Andrew Lock in order to have `appsettings.json` reloaded and bound to a stron
 
 The orginal article is for an ASP.NET core 1.1.0 app, while the example here uses a .NET core 1.1 console application with no ASP.
 
-## Compiling the application
+## Compiling and running the application
 
 The files supplied can be imported in Visual Studio (version 2017 used to produce this example). The files can also be compiled and deployed at the command line as follows:
 
@@ -16,4 +16,8 @@ The files supplied can be imported in Visual Studio (version 2017 used to produc
 
 The application simply writes the values of two parameters from `appsettings.json` to the console. The user is asked to either press a key to repeat, or hit `enter` to exit.
 
-The expected behavior is that if one of the two values in `appsettings.json` is changed between two iterations of the loop, the values displayed should change.
+## Expected behavior (currently not working)
+
+If one of the two values in `appsettings.json` is changed between two iterations of the loop, the values displayed should change.
+
+NOTE: be careful to modify the copy of `appsettings.json` in the folder where the executable lies (`bin\Debug\netcoreapp1.1`).
