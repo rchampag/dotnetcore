@@ -5,6 +5,8 @@ by Andrew Lock in order to have `appsettings.json` reloaded and bound to a stron
 
 The orginal article is for an ASP.NET core 1.1.0 app, while the example here uses a .NET core 1.1 console application with no ASP.
 
+My thanks to Andrew for quickly fixing a bug in my original attempt!
+
 ## Compiling and running the application
 
 The files supplied can be imported in Visual Studio (version 2017 used to produce this example). The files can also be compiled and deployed at the command line as follows:
