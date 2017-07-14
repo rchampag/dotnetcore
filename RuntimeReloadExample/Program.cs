@@ -15,16 +15,20 @@ namespace RuntimeReloadExample
 
             while (true)
             {
-                var service = serviceProvider.GetService<IMyService>();
-                var reply = service.DoSomething();
+                using (var scope = serviceProvider.CreateScope())
+                {
+                    var service = scope.ServiceProvider.GetService<IMyService>();
+                    var reply = service.DoSomething();
 
-                Console.WriteLine(reply);
+                    Console.WriteLine(reply);
 
-                Console.WriteLine("Press enter to exit, any other key to repeat...");
+                    Console.WriteLine("Press enter to exit, any other key to repeat...");
 
-                ConsoleKeyInfo keyInfo = Console.ReadKey();
-                if (keyInfo.Key == ConsoleKey.Enter)
-                    break;
+                    ConsoleKeyInfo keyInfo = Console.ReadKey();
+                    if (keyInfo.Key == ConsoleKey.Enter)
+                        break;
+                }
+
             }
         }
     }
